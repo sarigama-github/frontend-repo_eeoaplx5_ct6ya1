@@ -1,26 +1,40 @@
-import { useState } from 'react'
+import React from 'react'
+import Hero from './components/Hero'
+import Gallery from './components/Gallery'
+import Videos from './components/Videos'
+import ThreeDGoodies from './components/ThreeDGoodies'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-rose-50 to-purple-50 text-purple-900">
+      <header className="sticky top-0 z-40 backdrop-blur bg-white/70 border-b border-pink-100">
+        <div className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <span className="text-2xl">🍰</span>
+            <span className="font-extrabold text-pink-500">CaaKeyBakkey</span>
+          </div>
+          <nav className="hidden sm:flex gap-6 text-sm">
+            <a href="#gallery" className="hover:text-pink-500 transition">Gallery</a>
+            <a href="#videos" className="hover:text-pink-500 transition">Videos</a>
+            <a href="#goodies" className="hover:text-pink-500 transition">3D Goodies</a>
+          </nav>
         </div>
-      </div>
+      </header>
+
+      <main>
+        <Hero />
+        <Gallery />
+        <div id="videos">
+          <Videos />
+        </div>
+        <div id="goodies">
+          <ThreeDGoodies />
+        </div>
+      </main>
+
+      <footer className="py-10 text-center text-purple-600">
+        Made with love and sprinkles ✨
+      </footer>
     </div>
   )
 }
